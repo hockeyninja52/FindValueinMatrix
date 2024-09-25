@@ -15,6 +15,7 @@ public class findbybinsearch {
 			{5, 6, 7, 8},
 			{9, 10, 11, 12}
 		};
+	
 		
 		/*
 		for(int i = 0; i < matrix.length; i++) {
@@ -37,33 +38,16 @@ public class findbybinsearch {
 		}
 	
 	public static int b_search(int[][]matrix, int number) {
-		int start = 0;	//1
-		int end = matrix.length - 1;	//1
-		while(start <= end) { //1
-			int mid = (start + end) / 2; //1
-			if (mid == number) { //1
-				return mid;
-			} else {
-				if (mid < number) { //search the larger part of the half of the array //1
-					start = mid + 1; //1
-				} else { //search the smaller part of the half of the array
-					end = mid - 1;
+		//this is the linear search
+		for(int i = 0; i < matrix.length; i++) {
+			//what is matrix[i]
+			for(int j = 0; j < matrix[i].length; j++) {
+				//matrix[i][j] is the item at row i, column j
+				if (matrix[i][j] == number) {
+					return i, j;
 				}
 			}
-		} //4 * log(n) + 2 
+		}
 		return -1;
 	}
 	}
-	
-			
-			//System.out.println("The item int(" + r + "([" + c + "] is " + matrix[r][c]);
-
-
-	
-
-
-
-
-
-
-
